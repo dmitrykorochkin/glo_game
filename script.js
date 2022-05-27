@@ -2,16 +2,17 @@
 
 //переменная числа 
 
-const numberGame = function() {
 
-    const number = Math.floor(Math.random() * 100);
-    const inNumber = function(num) {
+const number = Math.floor(Math.random() * 100) + 1;
+const inNumber = function(num) {
         return !isNaN(parseFloat(num)) && isFinite(num);
     };
 
-    
+const numberGame = function() {
+
         const bigNumber = function() {
         const numberPrompt = prompt("Угадай число от 0 до 100");
+        debugger
             if (numberPrompt === null) {
                 alert('Игра окончена');
                 return;
@@ -25,7 +26,7 @@ const numberGame = function() {
                     
                     alert('Загадочное число меньше');
                     bigNumber();
-
+                    
                 } else if (userNumber < number) {
                     alert('Загадочное число больше');
                     bigNumber();
